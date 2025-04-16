@@ -23,13 +23,10 @@ app.get("/", (c) => {
       <head>
         <meta charSet="utf-8" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
-        <link
-          rel="stylesheet"
-          href="https://cdn.simplecss.org/simple.min.css"
-        />
         {getEnv("PROD")
           ? <script type="module" src="/static/client.js" />
           : <script type="module" src="/client/index.tsx" />}
+          <link rel="stylesheet" href="/assets/index-BcXHldQX.css" />
       </head>
       <body>
         <div id="root" />

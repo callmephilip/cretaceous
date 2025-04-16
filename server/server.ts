@@ -10,6 +10,13 @@ const routes: Route[] = [
         fsRoot: "./dist",
       }),
   },
+  {
+    pattern: new URLPattern({ pathname: "/assets/*" }),
+    handler: (req: Request) =>
+      serveDir(req, {
+        fsRoot: "./dist",
+      }),
+  },
 ];
 
 Deno.env.set("PROD", "true");
