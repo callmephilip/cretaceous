@@ -1,4 +1,4 @@
-# deno-hono-vite-jsx
+# cretaceous
 
 ## Getting started
 
