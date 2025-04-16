@@ -3,12 +3,12 @@ import devServer from "@hono/vite-dev-server";
 import { defineConfig } from "vite";
 import deno from "@deno/vite-plugin";
 import build from "@hono/vite-build/deno";
-import preserveDirectives from 'rollup-preserve-directives'
+import preserveDirectives from "rollup-preserve-directives";
 
 export default defineConfig(({ mode }) => {
   if (mode === "client") {
     return {
-       plugins: [
+      plugins: [
         preserveDirectives(),
       ],
       esbuild: {

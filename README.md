@@ -1,5 +1,10 @@
 # deno-hono-vite-jsx
 
+## Getting started
+
+- rename `hellojurassic` to your package's names
+- search for `hellojurassic` occurrences and replace them with the new package name
+
 ## Install
 
 ```bash

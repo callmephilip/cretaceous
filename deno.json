@@ -1,9 +1,12 @@
 {
   "tasks": {
-    "dev": "vite",
+    "dev": "vite && vite --mode client",
     "dev:client": "vite --mode client",
-    "build": "vite build --mode client",
-    "start": "deno run --allow-env --allow-net --allow-read server/server.ts"
+    "build": "deno run -A --reload jsr:@jurassic/jurassic/export . && deno task runnbs && deno check hellojurassic && deno lint && deno fmt && deno task clean && deno test --allow-all --env-file && vite build --mode client",
+    "start": "deno run --allow-env --allow-net --allow-read server/server.ts",
+    "clean": "deno run --allow-read --allow-env --allow-write --allow-run jsr:@jurassic/jurassic/clean",
+    "docs": "deno run -A --reload jsr:@jurassic/jurassic/docs . && deno lint && deno fmt",
+    "runnbs": "deno run --allow-read --allow-env --allow-run jsr:@jurassic/jurassic/runnbs"
   },
   "compilerOptions": {
     "strict": true,
@@ -15,6 +18,9 @@
   "imports": {
     "@std/http": "jsr:@std/http@^1.0.14",
     "@/components/": "./client/components/",
-    "@/lib/": "./client/lib/"
-  }
+    "@/lib/": "./client/lib/",
+    "hellojurassic/": "./hellojurassic/"
+  },
+  "exclude": ["_docs", "docs", "client/components/ui"],
+  "publish": { "exclude": ["nbs/", "docs/"] }
 }
