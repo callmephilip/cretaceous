@@ -14,6 +14,7 @@
     "npm:@hono/node-server@^1.12.2": "1.14.0_hono@4.7.6",
     "npm:@hono/vite-build@^1.1.0": "1.6.0_hono@4.7.6",
     "npm:@hono/vite-dev-server@0.19": "0.19.0_hono@4.7.6",
+    "npm:@radix-ui/react-slot@^1.2.0": "1.2.0_@types+react@19.1.2_react@19.1.0",
     "npm:@tailwindcss/postcss@^4.1.4": "4.1.4",
     "npm:@tailwindcss/typography@~0.5.15": "0.5.16_tailwindcss@4.1.4",
     "npm:@types/node@^22.14.0": "22.14.0",
@@ -206,6 +207,21 @@
         "@emnapi/core",
         "@emnapi/runtime",
         "@tybys/wasm-util"
+      ]
+    },
+    "@radix-ui/react-compose-refs@1.1.2_@types+react@19.1.2_react@19.1.0": {
+      "integrity": "sha512-z4eqJvfiNnFMHIIvXP3CY57y2WJs5g2v3X0zm9mEJkrkNv4rDxu+sg9Jh8EkXyeqBkB7SOcboo9dMVqhyrACIg==",
+      "dependencies": [
+        "@types/react",
+        "react"
+      ]
+    },
+    "@radix-ui/react-slot@1.2.0_@types+react@19.1.2_react@19.1.0": {
+      "integrity": "sha512-ujc+V6r0HNDviYqIK3rW4ffgYiZ8g5DEHrGJVk4x7kTlLXRDILnKX9vAUYeIsLOoDpDJ0ujpqMkjH4w2ofuo6w==",
+      "dependencies": [
+        "@radix-ui/react-compose-refs",
+        "@types/react",
+        "react"
       ]
     },
     "@rollup/rollup-android-arm-eabi@4.39.0": {
@@ -703,6 +719,7 @@
         "npm:@hono/node-server@^1.12.2",
         "npm:@hono/vite-build@^1.1.0",
         "npm:@hono/vite-dev-server@0.19",
+        "npm:@radix-ui/react-slot@^1.2.0",
         "npm:@tailwindcss/postcss@^4.1.4",
         "npm:@tailwindcss/typography@~0.5.15",
         "npm:@types/node@^22.14.0",
