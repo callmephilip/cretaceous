@@ -1,6 +1,7 @@
 {
   "tasks": {
     "dev": "vite",
+    "dev:client": "vite --mode client",
     "build": "vite build --mode client",
     "start": "deno run --allow-env --allow-net --allow-read server/server.ts"
   },
@@ -12,6 +13,8 @@
     "jsxImportSource": "hono/jsx"
   },
   "imports": {
-    "@std/http": "jsr:@std/http@^1.0.14"
+    "@std/http": "jsr:@std/http@^1.0.14",
+    "@/components/": "./client/components/",
+    "@/lib/": "./client/lib/"
   }
 }
