@@ -17,6 +17,22 @@ const getEnv = (key: string) => {
   }
 };
 
+
+const getProdAssets = () => {
+  return ["static", "assets"].map((d) => {
+    const dir = Deno.readDirSync(`./dist/${d}`);
+    return Array.from(dir).map(f => {
+      if (f.isFile && f.name.endsWith(".js")) {
+        return <script key={f.name} type="module" src={`/${d}/${f.name}`} />;
+      } else if (f.isFile && f.name.endsWith(".css")) {
+        return <link key={f.name} rel="stylesheet" href={`/${d}/${f.name}`} />;
+      }
+    }).filter(f => f);
+  }).reduce((acc, dir) => {
+    return [...acc, ...dir]
+  }, []);  
+}
+
 app.get("/", (c) => {
   return c.html(
     <html lang="en">
@@ -24,9 +40,9 @@ app.get("/", (c) => {
         <meta charSet="utf-8" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         {getEnv("PROD")
-          ? <script type="module" src="/static/client.js" />
+          ? getProdAssets()
           : <script type="module" src="/client/index.tsx" />}
-          <link rel="stylesheet" href="/assets/index-BcXHldQX.css" />
+          
       </head>
       <body>
         <div id="root" />
